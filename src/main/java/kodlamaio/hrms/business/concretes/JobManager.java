@@ -11,7 +11,7 @@ import kodlamaio.hrms.core.utilities.results.Result;
 import kodlamaio.hrms.core.utilities.results.SuccessDataResult;
 import kodlamaio.hrms.core.utilities.results.SuccessResult;
 import kodlamaio.hrms.dataAccess.abstracts.JobDao;
-import kodlamaio.hrms.entities.concretes.Job;
+import kodlamaio.hrms.entities.concretes.JobTitle;
 
 @Service
 public class JobManager implements JobService{
@@ -25,12 +25,12 @@ public class JobManager implements JobService{
 	}
 
 	@Override
-	public DataResult<List<Job>> getAll() {
-		return new SuccessDataResult<List<Job>>(this.jobDao.findAll(),"İş pozisyonları listelendi");
+	public DataResult<List<JobTitle>> getAll() {
+		return new SuccessDataResult<List<JobTitle>>(this.jobDao.findAll(),"İş pozisyonları listelendi");
 	}
 
 	@Override
-	public Result add(Job job) {
+	public Result add(JobTitle job) {
 		this.jobDao.save(job);
 		return new SuccessResult("Pozisyon eklendi");
 	}

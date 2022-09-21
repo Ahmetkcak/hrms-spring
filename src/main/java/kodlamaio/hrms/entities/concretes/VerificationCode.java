@@ -1,5 +1,7 @@
 package kodlamaio.hrms.entities.concretes;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,17 +15,23 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name="job_titles")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Job {
+@Table(name="verification_codes")
+
+public class VerificationCode {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="title")
-	private String title;
+	@Column(name="code")
+	private String code;
 	
+	@Column(name="is_verified")
+	private boolean isVerified;
+	
+	@Column(name="verified_date")
+	private LocalDate verifiedDate;
 }

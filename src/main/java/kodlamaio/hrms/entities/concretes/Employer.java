@@ -12,22 +12,19 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name="employees")
+@Table(name="employers")
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-@PrimaryKeyJoinColumn(name="id",referencedColumnName = "id")
-public class Employee extends User{
+@PrimaryKeyJoinColumn(name = "id", referencedColumnName = "id")
+public class Employer extends User{
 	
-	@Column(name="first_name")
-	private String firstName;
+	@Column(name="company_name")
+	private String companyName;
 	
-	@Column(name="last_name")
-	private String lastName;
+	@Column(name="web_address")
+	private String webAddress;
 	
-	@Column(name="identification_number")
-	private String identificationNumber;
-	
-	@Column(name="birth_date")
-	private String birthDate;
+	@Column(name="phone_number")
+	private String phoneNumber;
 }

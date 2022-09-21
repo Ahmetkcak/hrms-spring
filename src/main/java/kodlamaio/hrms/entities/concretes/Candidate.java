@@ -1,5 +1,7 @@
 package kodlamaio.hrms.entities.concretes;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
@@ -12,12 +14,12 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name="employees")
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-@PrimaryKeyJoinColumn(name="id",referencedColumnName = "id")
-public class Employee extends User{
+@PrimaryKeyJoinColumn(name = "id", referencedColumnName = "id")
+@Table(name = "candidates")
+public class Candidate extends User{
 	
 	@Column(name="first_name")
 	private String firstName;
@@ -25,9 +27,9 @@ public class Employee extends User{
 	@Column(name="last_name")
 	private String lastName;
 	
-	@Column(name="identification_number")
-	private String identificationNumber;
+	@Column(name="fidentity_number")
+	private String identityNumber;
 	
-	@Column(name="birth_date")
-	private String birthDate;
+	@Column(name="birth_year")
+	private String birthYear;
 }
